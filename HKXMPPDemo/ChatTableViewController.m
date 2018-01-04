@@ -47,10 +47,10 @@
     
     // 创建谓词
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"bareJidStr == %@ and streamBareJidStr == %@", self.friendJID.bare, [XMPPManager sharedManager].xmppStream.myJID.bare];
+    [fetchRequest setPredicate:predicate];
     
     // 创建排序类
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES];
-    [fetchRequest setPredicate:predicate];
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     
     

@@ -41,6 +41,7 @@
 //登录验证失败
 -(void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error
 {
+    NSLog(@"++++++%@",error.description);
     NSLog(@"%s__%d |验证失败",__FUNCTION__,__LINE__);
 }
 - (void)didReceiveMemoryWarning {
